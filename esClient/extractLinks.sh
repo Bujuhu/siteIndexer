@@ -1,2 +1,2 @@
 #!/bin/sh 
-jq -r '.hits.hits[] | "\(._id) \(._source.source[].link)"' | awk NF
+jq -r '.hits.hits[] | "\(._id) \(._source.link)"' | awk NF

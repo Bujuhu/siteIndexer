@@ -1,4 +1,4 @@
 #!/bin/sh
 
-awk -v esid="$1" '{ printf "{ \"update\": {\"_id\": \"%s\", \"_index\": \"%s\"}}\n\
-{ \"doc\": { \"additional_crawler_information\": { \"Content-Type\": \"%s\", \"Video-Downloadable\": %s }}}\n", $1, esid, $2, $3 }'
+printf "{ \"update\": {\"_index\": \"%s\", {\"_id\": \"%s\"}}\n\
+{ \"doc\": { \"additional_crawler_information\": { \"Content-Type\": %s, \"Video-Downloadable\": %s }}}\n" $1 $2 $3 $4

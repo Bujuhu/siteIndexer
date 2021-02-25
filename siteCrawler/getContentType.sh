@@ -1,2 +1,4 @@
 #!/bin/sh
-curl -IsS "$1" | grep Content-Type: | awk '{print $2}'
+res=$(curl -IsS "$1" | grep -i Content-Type: | awk '{print $2}')
+
+[ "$res" ] && echo "\"$res\"" || echo "\"unknown\""
